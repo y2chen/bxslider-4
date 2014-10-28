@@ -31,6 +31,7 @@
 		adaptiveHeightSpeed: 500,
 		video: false,
 		useCSS: true,
+		use3D: true,
 		preloadImages: 'visible',
 		responsive: true,
 		slideZIndex: 50,
@@ -536,7 +537,8 @@
 			// use CSS transform
 			if(slider.usingCSS){
 				// determine the translate3d value
-				var propValue = slider.settings.mode == 'vertical' ? 'translate3d(0, ' + value + 'px, 0)' : 'translate3d(' + value + 'px, 0, 0)';
+				var translate = slider.settings.mode == 'vertical' ? '0, ' + value + 'px' : value + 'px, 0';
+				var propValue = slider.settings.use3D ? 'translate3d('+translate+', 0)' : 'translate('+translate+')';
 				// add the CSS transition-duration
 				el.css('-' + slider.cssPrefix + '-transition-duration', duration / 1000 + 's');
 				if(type == 'slide'){

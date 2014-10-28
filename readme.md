@@ -182,6 +182,13 @@ default: true
 options: boolean (true / false)
 ```
 
+**use3D**
+If true, CSS 3D translations will be used for the animation (using native hardware acceleration). If false, 2D translations will be used.
+```
+default: true
+options: boolean (true / false)
+```
+
 **preloadImages**
 If 'all', preloads all images before starting the slider. If 'visible', preloads only images in the initially visible slides before starting the slider (tip: use 'visible' if all slides are identical dimensions)
 ```
